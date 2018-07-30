@@ -311,6 +311,8 @@ if [[ ! "$BUILD_DIR" == "/app" ]]; then
   deep-cp /app/.heroku/src "$BUILD_DIR/.heroku/src"
 fi
 
+#add command to generate bower components
+python manage.py bower_install --allow-root
 
 # Django collectstatic support.
 # The buildpack automatically runs collectstatic for Django applications.
